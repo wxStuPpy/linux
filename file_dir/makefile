@@ -6,8 +6,13 @@ fopen:fopen.cpp
 	-${CXX} $^ ${CXXFLAGS} -o $@
 	-./$@ file1
 	-rm ./$@
-	
+
 chmod:chmod.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ file1
+	-rm ./$@
+
+getcwd:getcwd.cpp
 	-${CXX} $^ ${CXXFLAGS} -o $@
 	-./$@ file1
 	-rm ./$@
