@@ -16,3 +16,8 @@ getcwd:getcwd.cpp
 	-${CXX} $^ ${CXXFLAGS} -o $@
 	-./$@ file1
 	-rm ./$@
+
+open:open.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ file2
+	-rm ./$@
