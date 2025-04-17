@@ -8,5 +8,10 @@ my_ls:my_ls.cpp
 	-rm ./$@
 my_lsal:my_ls_al.cpp
 	-${CXX} $^ ${CXXFLAGS} -o $@
-	-./$@ dir1
+	-./$@ ../dir_stream
+	-rm ./$@
+
+tree:tree.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ ../dir_stream
 	-rm ./$@
