@@ -21,3 +21,24 @@ open:open.cpp
 	-${CXX} $^ ${CXXFLAGS} -o $@
 	-./$@ file2
 	-rm ./$@
+
+read:read.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ file1
+	-rm ./$@
+
+my_cp:my_cp.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ file1 file2
+	-rm ./$@
+
+mmap:mmap.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ file1
+	-rm ./$@
+
+lseek:lseek.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ file1
+	-rm ./$@
+
