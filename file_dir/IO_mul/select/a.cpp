@@ -6,6 +6,7 @@ int main(int argc,char *argv[]){
     int fdw=open(argv[2],O_WRONLY);
     ERROR_CHECK(fdw,-1,"open write");
     char buf[4096];
+
     //为fd_set 申请内存空间
     fd_set rdset;
     while(1){
@@ -14,7 +15,12 @@ int main(int argc,char *argv[]){
     //添加需要监听的文件描述符
     FD_SET(STDIN_FILENO,&rdset);
     FD_SET(fdr,&rdset);
-    select(fdr+1,&rdset,nullptr,nullptr,nullptr);
+    // 设置超时
+    timeval timeout={3,0};
+    if(select(fdr+1,&rdset,nullptr,nullptr,&timeout)==0){
+        printf("timeout\n");
+        continue;
+    }
     //select返回 说明fdr或stdin就绪 rdset是就绪集合
     if(FD_ISSET(fdr,&rdset)){
         // 读取b的消息
