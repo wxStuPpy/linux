@@ -21,3 +21,13 @@ nonBlock:nonBlock.cpp
 	-${CXX} $^ ${CXXFLAGS} -o $@
 	-./$@ pipe1 
 	-rm ./$@
+
+trainA:trainA.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ pipe1 file
+	-rm ./$@
+
+trainB:trainB.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ pipe1 
+	-rm ./$@
