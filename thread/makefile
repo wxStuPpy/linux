@@ -17,3 +17,22 @@ execv:execv.cpp
 	-./$@ 
 	-rm ./$@
 
+orphan:orphan.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 
+	-rm ./$@
+
+zombie:zombie.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 
+	-rm ./$@
+
+wait:wait.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 
+	-rm ./$@
+
+daemon:daemon.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 
+	-rm ./$@
