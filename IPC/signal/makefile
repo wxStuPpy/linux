@@ -22,3 +22,9 @@ signal_restart:signal_restart.cpp
 	-${CXX} $^ ${CXXFLAGS} -o $@
 	-./$@ 
 	-rm ./$@
+
+setitimer:setitimer.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 
+	-rm ./$@
+
