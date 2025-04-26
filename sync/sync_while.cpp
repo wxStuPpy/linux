@@ -21,6 +21,7 @@ void B(){
 
 void* fun(void *arg){
     sharedRes_t *pRes=(sharedRes_t*)arg;
+    /*空转 占用cpu*/
     while(1){
         pthread_mutex_lock(&pRes->mutex);
         if(flag==true){
