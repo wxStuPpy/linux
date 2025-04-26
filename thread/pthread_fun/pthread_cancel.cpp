@@ -4,6 +4,8 @@ void *fun(void *arg){
     while(1){
         /*如果不打印这行话 那就不存在取消点 pthread_cancel不能结束该线程*/
         printf("I still alive\n");
+        //也可以手动设置取消点
+        //pthread_testcancel();
     }
     pthread_exit(nullptr);
 }

@@ -17,4 +17,9 @@ pthread_cancel:pthread_cancel.cpp
 	-./$@ 
 	-rm ./$@
 
+pthread_cleanup:pthread_cleanup.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 
+	-rm ./$@
+
 
