@@ -22,3 +22,13 @@ broadcast:broadcast.cpp
 	-./$@ 
 	-rm ./$@
 
+ABC:ABC.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 
+	-rm ./$@
+
+producer_comsumer:producer_comsumer.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 
+	-rm ./$@
+
