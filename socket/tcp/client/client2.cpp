@@ -31,11 +31,6 @@ int main(int argc, char *argv[]) {
         if (FD_ISSET(STDIN_FILENO, &rdset)) {
             memset(buf, 0, sizeof(buf));
             ssize_t sret = read(STDIN_FILENO, buf, sizeof(buf));
-            if (sret > 0) {
-                buf[strcspn(buf, "\n")] = 0;
-                sret = write(sockfd, buf, strlen(buf));
-                printf("client sent sret = %ld buf = %s\n", sret, buf);
-            }
         }
         if (FD_ISSET(sockfd, &rdset)) {
             memset(buf, 0, sizeof(buf));
