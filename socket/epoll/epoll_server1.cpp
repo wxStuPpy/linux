@@ -42,7 +42,7 @@ int main(int argc,char *argv[]){
                 ev.data.fd=STDIN_FILENO;
                 ev.events=EPOLLIN;
                 epoll_ctl(epfd,EPOLL_CTL_ADD,ev.data.fd,&ev);
-                printf("connected!\n");
+                printf("connected! netfd = %d\n",netfd);
             }
             else if(netfd!=-1&&readyEvents[i].data.fd==netfd){
                 memset(buf,0,sizeof(buf));

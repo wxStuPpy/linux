@@ -22,4 +22,13 @@ epoll_client1:epoll_client1.cpp
 	-./$@ 0.0.0.0 8888
 	-rm ./$@
 
+epoll_server2:epoll_server2.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 0.0.0.0 8888
+	-rm ./$@
+
+epoll_client2:epoll_client2.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ 0.0.0.0 8888
+	-rm ./$@
 

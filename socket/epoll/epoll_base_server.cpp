@@ -1,5 +1,7 @@
 #include "func.h"
 
+#define MAXEVENTS 20
+
 int main(int argc, char *argv[]) {
     ARGC_CHECK(argc, 3);
 
