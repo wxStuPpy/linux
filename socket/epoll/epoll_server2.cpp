@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     while (1)
     {
         struct epoll_event readyEvents[MAXEVENTS];
-        int readyNum = epoll_wait(epfd, readyEvents, MAXEVENTS, 1000);
+        int readyNum = epoll_wait(epfd, readyEvents, MAXEVENTS, 1000);/*每隔一秒检查一次 单位ms*/
         time_t now = time(nullptr);
         for (int i = 0; i < readyNum; ++i)
         {
