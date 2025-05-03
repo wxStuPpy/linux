@@ -1,5 +1,10 @@
 #include<func.h>
 
+//1.0
+int recvFile(int sockfd){
+    
+}
+
 int main(int argc,char *argv[]){
     ARGC_CHECK(argc,3);
     struct sockaddr_in serverAddr;
@@ -12,5 +17,7 @@ int main(int argc,char *argv[]){
 
     int ret=connect(sockfd,(sockaddr*)&serverAddr,sizeof(serverAddr));
     ERROR_CHECK(ret,-1,"connect");
+    sleep(3);
+    close(sockfd);
     return 0;
 }
