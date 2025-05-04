@@ -19,8 +19,8 @@ int epollAdd(int epfd,int fd);
 int epollDel(int epfd,int fd);
 
 /*通过一个管道sockfd 来发送内核的文件对象信息 来实现隔离的进程间操作同一个文件对象的目的*/
-int sendfd(int sockfd, int fdtosend);
-int recvfd(int sockfd, int *pfdtorecv);
+int sendfd(int sockfd, int fdtosend,int exitFlag);
+int recvfd(int sockfd, int *pfdtorecv,int *exitFlag);
 
 int workLoop(int sockfd);
 

@@ -25,12 +25,20 @@ int makeWorker(int workerNum, workerData_t *workerArr)
 int workLoop(int sockfd){
     while(1){
         int netfd;
-        recvfd(sockfd,&netfd);/*接受任务*/
+        int exitFlag;
+        recvfd(sockfd,&netfd,&exitFlag);/*接受任务*/
+        /*flag==1 子进程退出*/
+        if(exitFlag==1){
+            printf("worker process has been killed\n");
+            exit(EXIT_SUCCESS);
+        }
         printf("begin work\n");
-        sleep(2);
+        sleep(10);
+        transFile(netfd);
         printf("after work\n");
         /*子进程完成任务 发送自己的pid告诉父进程已经完成任务*/
         pid_t pid=getpid();
         send(sockfd,&pid,sizeof(pid),0);
     }
+    return 0;
 }
