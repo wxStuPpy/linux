@@ -7,6 +7,7 @@ int threadPoolInit(threadPool_t *pthreadPool, int workerNum)
     taskQueueInit(&pthreadPool->taskQueue);
     pthread_mutex_init(&pthreadPool->mutex,nullptr);
     pthread_cond_init(&pthreadPool->cond,nullptr);
+    pthreadPool->exitFlag=0;
     return 0;
 }
 int makeWorker(threadPool_t*pthreadPool){

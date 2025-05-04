@@ -8,3 +8,4 @@ typedef struct tidArr_s{
 
 int tidArrInit(tidArr_t*ptidArr,int workerNum);
 void *threadFun(void *arg);
+void unlock(void *arg);

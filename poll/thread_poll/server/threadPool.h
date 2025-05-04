@@ -12,6 +12,8 @@ typedef struct threadPool_s{
     pthread_mutex_t mutex;
     /*条件变量*/
     pthread_cond_t cond;
+    /*退出标志位*/
+    int exitFlag;
 }threadPool_t;
 
 int threadPoolInit(threadPool_t*pthreadPool,int workerNum);

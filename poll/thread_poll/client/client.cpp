@@ -139,7 +139,6 @@ int main(int argc, char *argv[])
 
     int ret = connect(sockfd, (sockaddr *)&serverAddr, sizeof(serverAddr));
     ERROR_CHECK(ret, -1, "connect");
-    sleep(10);
     recvFile(sockfd);
     close(sockfd);
     return 0;
