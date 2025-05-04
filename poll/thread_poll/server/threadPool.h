@@ -16,3 +16,4 @@ typedef struct threadPool_s{
 
 int threadPoolInit(threadPool_t*pthreadPool,int workerNum);
 int makeWorker(threadPool_t*pthreadPool);
+int transFile(int netfd);

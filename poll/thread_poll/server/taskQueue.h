@@ -12,3 +12,5 @@ typedef struct taskQueue_s{
 }taskQueue_t;
 
 int taskQueueInit(taskQueue_t*ptaskQueue);
+int enQueue(taskQueue_t*ptaskQueue,int netfd);
+int deQueue(taskQueue_t*ptaskQueue);
