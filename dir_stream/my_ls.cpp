@@ -2,9 +2,18 @@
 int main(int argc,char *argv[]){
     ARGC_CHECK(argc,2);
     DIR*dirp=opendir(argv[1]);
-    ERROR_CHECK(dirp,nullptr,"opendir");
+    if(dirp==nullptr){
+        perror("dirp");
+        return -1;
+    }
     struct dirent*pdirent;
-    /*struct dirent
+    while((pdirent=readdir(dirp))!=nullptr){
+        printf("inode = %ld, reclen = %d, type= %d, name=%s\n",pdirent->d_ino,pdirent->d_reclen,pdirent->d_type,pdirent->d_name);
+    }
+    closedir(dirp);
+}
+
+/*struct dirent
   {
 #ifndef __USE_FILE_OFFSET64
     __ino_t d_ino;
@@ -17,8 +26,3 @@ int main(int argc,char *argv[]){
     unsigned char d_type;
     char d_name[256];		// We must not include limits.h! //
   };*/
-    while((pdirent=readdir(dirp))!=nullptr){
-        printf("inode = %ld, reclen = %d, type= %d, name=%s\n",pdirent->d_ino,pdirent->d_reclen,pdirent->d_type,pdirent->d_name);
-    }
-    closedir(dirp);
-}

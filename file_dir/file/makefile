@@ -56,3 +56,8 @@ duplex_pipe2:duplex_pipe2.cpp
 	-${CXX} $^ ${CXXFLAGS} -o $@
 	-./$@ pipe2 pipe1
 	-rm ./$@
+
+block_replace:block_replace.cpp
+	-${CXX} $^ ${CXXFLAGS} -o $@
+	-./$@ page_data
+	-rm ./$@
